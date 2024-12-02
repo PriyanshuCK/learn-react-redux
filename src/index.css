@@ -1,3 +1,14 @@
 * {
   margin: 0px;
 }
+
+:root {
+  --primary-text-color: #475569; /* slate-600 */
+  --secondary-text-color: #1e293b; /* slate-800 */
+  --background-color: #ecfdf5; /* emerald-50 */
+  --accent-color: #10b981; /* emerald-500 */
+}
+
+body {
+  background-color: var(--background-color);
+}

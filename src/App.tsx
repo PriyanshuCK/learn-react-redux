@@ -9,20 +9,22 @@ import FeaturedCars from "./components/Featured_cars/FeaturedCars";
 import Companies from "./components/Companies/Companies";
 import Caraousal from "./components/Caraousal/Caraousal";
 import About from "./components/About/About";
+import CarHome from "./components/CarHome/CarHome";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import HomeLayout from "./components/HomeLayout/HomeLayout";
 
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <SearchComponent />
-      <Caraousal />
-      <Features />
-      <FeaturedCars />
-      <Testimonials />
-      <Companies />
-      <About />
-      <Footer />
+      <Router>
+        {/* <Route path="/" element={} */}
+        <Routes>
+          <Route path="/" element={<HomeLayout />}>
+            <Route path="/car-home" element={<CarHome />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }

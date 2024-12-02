@@ -11,7 +11,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, description }) => {
   return (
     <div className="team-member">
       <h3>{name}</h3>
-      <p>
+      <p className="role">
         <strong>Role:</strong> {role}
       </p>
       <p>{description}</p>
@@ -40,7 +40,7 @@ const About: React.FC = () => {
         <TeamMember
           name="Priyanshu Sharma "
           role="Developer"
-          description="Focused on backend development with Node.js and MongoDB."
+          description="I am Priyanshu Sharma, a software engineer based in Gurgaon with a degree in Metallurgical and Materials Engineering from MNIT Jaipur. I have a strong passion for programming and web development and am always eager to learn and enhance my skills. My creative interests include graphic designing, motion graphics, and building interactive and functional web applications. I enjoy working with tools like DaVinci Resolve Fusion, Motion Canvas, and GLSL Shaders to create visually appealing designs and projects."
         />
       </div>
     </section>
