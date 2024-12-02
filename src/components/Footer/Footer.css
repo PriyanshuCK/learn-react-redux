@@ -1,0 +1,100 @@
+/* Footer styles */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brand-name a {
+  font-size: 1.5rem;
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.brand-description,
+.brand-contact {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.about h2,
+.top-brands h2,
+.newsletter h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffcc00;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+}
+
+.subscribe-button {
+  padding: 8px 16px;
+  background-color: #ffcc00;
+  color: #222;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.subscribe-button:hover {
+  background-color: #ff9900;
+}
+
+.copy {
+  text-align: center;
+  grid-column: span 4;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #ffcc00;
+}
+
+.social-links a:hover {
+  color: #ff9900;
+}
