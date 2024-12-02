@@ -21,7 +21,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, description }) => {
 
 const About: React.FC = () => {
   return (
-    <section>
+    <section className="about-us">
       <h2>About Us</h2>
       <div className="team">
         <TeamMember

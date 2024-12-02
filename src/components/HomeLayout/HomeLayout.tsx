@@ -1,17 +1,30 @@
 import React, { FC } from "react";
 import "./HomeLayout.css";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 interface HomeLayoutProps {}
 
 const HomeLayout: FC<HomeLayoutProps> = () => (
   <>
     <nav className="global-header">
-      <Link to={"/"}>Home</Link>
-      <Link to={"/car-home"}>The Car Project</Link>
-      <Link to={"/about"}>About Us</Link>
+      <NavLink
+        to={"/"}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to={"/car-home"}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        The Car Project
+      </NavLink>
+      <NavLink
+        to={"/about"}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        About Us
+      </NavLink>
     </nav>
     <Outlet />
   </>

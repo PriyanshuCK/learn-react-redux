@@ -11,4 +11,9 @@ a:hover {
   width: 100%;
   padding: 20px 20px;
   justify-content: space-around;
+  border: 1px solid var(--accent-color);
+}
+
+.active-link {
+  border-bottom: 3px dotted var(--accent-color);
 }

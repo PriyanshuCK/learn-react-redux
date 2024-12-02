@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonials: React.FC = () => (
-  <section className="testimonials">
+  <section className="testimonials" id="testimonials">
     <h2 className="testimonials-heading">What Our Clients Say</h2>
     <div className="testimonials-container">
       {testimonials.map((testimonial, index) => (

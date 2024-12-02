@@ -30,7 +30,7 @@ const cars: Car[] = [
 ];
 
 const Caraousal: FC = () => (
-  <section className="caraousal-section">
+  <section className="caraousal-section" id="new-cars">
     <div className="caraousal-container">
       <h2 className="caraousal-title">Newest Cars</h2>
       <div className="caraousal-wrapper">

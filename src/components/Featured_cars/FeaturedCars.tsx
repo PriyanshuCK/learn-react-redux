@@ -68,7 +68,7 @@ const featuredCars: Car[] = [
 ];
 
 const FeaturedCars: FC = () => (
-  <section className="featured-cars-section">
+  <section className="featured-cars-section" id="featured-cars">
     <div className="featured-cars-container">
       <div className="featured-cars-header">
         <p>
