@@ -8,9 +8,16 @@ const LearningNextJS: FC<LearningNextJSProps> = () => (
     <div id="plan-container">
       <h1 className="plan-title">Learning Next.js</h1>
       <p className="plan-description">
-        We’ll be following the Learn section from the official Next.js
-        documentation. We'll be building a simple full-stack financial dashboard
-        that has:
+        We’ll be following the{" "}
+        <a
+          href="https://nextjs.org/learn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn
+        </a>{" "}
+        section from the official Next.js documentation. We'll be building a
+        simple full-stack financial dashboard that has:
       </p>
       <ul className="plan-list">
         <li>A public home page.</li>
