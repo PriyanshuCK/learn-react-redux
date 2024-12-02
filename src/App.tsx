@@ -8,6 +8,7 @@ import Features from "./components/Features/Features";
 import FeaturedCars from "./components/Featured_cars/FeaturedCars";
 import Companies from "./components/Companies/Companies";
 import Caraousal from "./components/Caraousal/Caraousal";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <FeaturedCars />
       <Testimonials />
       <Companies />
+      <About />
       <Footer />
     </>
   );
