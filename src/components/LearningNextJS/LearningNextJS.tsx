@@ -25,6 +25,11 @@ const LearningNextJS: FC<LearningNextJSProps> = () => (
         <li>Dashboard pages that are protected by authentication.</li>
         <li>The ability for users to add, edit, and delete invoices.</li>
       </ul>
+      <img
+        src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fdashboard.png&w=1920&q=75&dpl=dpl_6xxKuH4jJ4oKS29i2wEZWsB5Fyot"
+        alt="Financial Dashboard"
+        id="financial-demo-img"
+      />
 
       <div className="day-section" id="day-1">
         <h2 className="day-title">Day 1</h2>
