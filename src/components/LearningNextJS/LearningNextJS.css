@@ -1,0 +1,30 @@
+.plan-title {
+  color: var(--primary-text-color);
+  border-bottom: 1px solid var(--accent-color);
+  text-align: center;
+  padding-bottom: 6px;
+  margin-bottom: 32px;
+}
+
+#plan-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 80px 0px;
+  color: var(--secondary-text-color);
+}
+
+.plan-list,
+.steps-list,
+.concepts-list {
+  list-style-type: disc;
+  padding: 8px 20px;
+  margin: 0;
+}
+
+.day-title {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.steps-title {
+}

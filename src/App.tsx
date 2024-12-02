@@ -4,6 +4,7 @@ import CarHome from "./components/the-car-project/CarHome/CarHome";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import HomeLayout from "./components/the-car-project/HomeLayout/HomeLayout";
 import TaskSchedulerReact from "./components/task-scheduler-react/TaskSchedulerReact/TaskSchedulerReact";
+import LearningNextJS from "./components/LearningNextJS/LearningNextJS";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               path="/task-scheduler-react"
               element={<TaskSchedulerReact />}
             />
+            <Route path="/learning-nextjs" element={<LearningNextJS />} />
             <Route path="/about" element={<About />} />
           </Route>
         </Routes>

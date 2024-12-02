@@ -1,12 +1,13 @@
-import React, { FC } from 'react';
-import './TaskReactHome.css';
+import React, { FC } from "react";
+import "./TaskReactHome.css";
+// import { Input } from "@chakra-ui/react";
 
 interface TaskReactHomeProps {}
 
 const TaskReactHome: FC<TaskReactHomeProps> = () => (
-  <div className="TaskReactHome">
-    TaskReactHome Component
-  </div>
+  <>
+    {/* <Input placeholder="What's on your mind, today?" variant="flushed" />{" "} */}
+  </>
 );
 
 export default TaskReactHome;

@@ -26,6 +26,12 @@ const HomeLayout: FC<HomeLayoutProps> = () => (
         Task Scheduler
       </NavLink>
       <NavLink
+        to={"/learning-nextjs"}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        NextJS
+      </NavLink>
+      <NavLink
         to={"/about"}
         className={({ isActive }) => (isActive ? "active-link" : "")}
       >
