@@ -20,6 +20,12 @@ const HomeLayout: FC<HomeLayoutProps> = () => (
         The Car Project
       </NavLink>
       <NavLink
+        to={"/task-scheduler-react"}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        Task Scheduler
+      </NavLink>
+      <NavLink
         to={"/about"}
         className={({ isActive }) => (isActive ? "active-link" : "")}
       >
