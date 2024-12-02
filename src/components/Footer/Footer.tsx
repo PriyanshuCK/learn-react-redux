@@ -1,26 +1,27 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-section brand">
         <h1 className="brand-name">
-          <a href="index.html">CarVilla</a>
+          <a href="#hero">The Car Project</a>
         </h1>
         <p className="brand-description">
           Ased do eiusm tempor incidi ut labore et dolore magna aliqua. Ut enim
           ad minim veniam.
         </p>
-        <p className="brand-contact">info@themesine.com</p>
-        <p className="brand-contact">+1 (885) 256-315-4554</p>
+        <p className="brand-contact">lrrt.vercel.app</p>
+        <p className="brand-contact">+91 99999 99999</p>
       </div>
 
-      <div className="footer-section about">
-        <h2>About Devloon</h2>
+      <div className="footer-section">
+        <h2>About Us</h2>
         <ul className="footer-links">
           <li>
-            <a href="/">About Us</a>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
             <a href="/">Career</a>
@@ -37,20 +38,7 @@ const Footer = () => {
       <div className="footer-section top-brands">
         <h2>Top Brands</h2>
         <ul className="footer-links">
-          {[
-            "BMW",
-            "Lamborghini",
-            "Camaro",
-            "Audi",
-            "Infiniti",
-            "Nissan",
-            "Ferrari",
-            "Porsche",
-            "Land Rover",
-            "Aston Martin",
-            "Mercedes",
-            "Opel",
-          ].map((brand) => (
+          {["BMW", "Lamborghini", "Camaro", "Audi"].map((brand) => (
             <li key={brand}>
               <a href="/">{brand}</a>
             </li>
@@ -73,7 +61,8 @@ const Footer = () => {
 
       <div className="footer-section copy">
         <p>
-          © Copyright. Designed and developed by <a href="/">Themesine</a>.
+          © Copyright. Designed and developed by{" "}
+          <a href="/">Aryan & Priyanshu</a>.
         </p>
         <div className="social-links">
           {["Facebook", "Instagram", "LinkedIn", "Pinterest", "Behance"].map(

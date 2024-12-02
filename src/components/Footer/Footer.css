@@ -1,7 +1,6 @@
 /* Footer styles */
 .footer {
-  background-color: #222;
-  color: #fff;
+  background-color: #d1fae5;
   padding: 40px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -16,14 +15,14 @@
 
 .brand-name a {
   font-size: 1.5rem;
-  color: #ffcc00;
+  color: var(--primary-text-color);
   text-decoration: none;
 }
 
 .brand-description,
 .brand-contact {
   font-size: 0.9rem;
-  color: #aaa;
+  color: var(--secondary-text-color);
 }
 
 .about h2,
@@ -40,11 +39,12 @@
 
 .footer-links li {
   margin-bottom: 8px;
+  font-size: 16px !important;
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #ffcc00;
+  color: var(--secondary-text-color);
 }
 
 .footer-links a:hover {
@@ -61,13 +61,13 @@
   padding: 8px;
   border: 1px solid #555;
   border-radius: 4px;
-  background-color: #333;
-  color: #fff;
+  background-color: #d1fae5;
+  color: var(--accent-color);
 }
 
 .subscribe-button {
   padding: 8px 16px;
-  background-color: #ffcc00;
+  background-color: var(--accent-color);
   color: #222;
   border: none;
   cursor: pointer;
@@ -75,7 +75,7 @@
 }
 
 .subscribe-button:hover {
-  background-color: #ff9900;
+  background-color: var(--accent-color);
 }
 
 .copy {
@@ -92,9 +92,9 @@
 
 .social-links a {
   text-decoration: none;
-  color: #ffcc00;
+  color: var(--accent-color);
 }
 
 .social-links a:hover {
-  color: #ff9900;
+  color: var(--accent-color);
 }

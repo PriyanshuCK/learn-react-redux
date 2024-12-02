@@ -18,42 +18,42 @@ const featuredCars: Car[] = [
   },
   {
     img: "assets/images/featured-cars/fc2.png",
-    model: "chevrolet camaro wmv20",
+    model: "Chevrolet camaro wmv20",
     price: "$66,575",
     description:
       "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
   },
   {
     img: "assets/images/featured-cars/fc3.png",
-    model: "lamborghini v520",
+    model: "Lamborghini v520",
     price: "$125,250",
     description:
       "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
   },
   {
     img: "assets/images/featured-cars/fc4.png",
-    model: "audi a3 sedan",
+    model: "Audi a3 sedan",
     price: "$95,500",
     description:
       "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
   },
   {
     img: "assets/images/featured-cars/fc4.png",
-    model: "infiniti z5",
+    model: "Infiniti z5",
     price: "$36,850",
     description:
       "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
   },
   {
     img: "assets/images/featured-cars/fc5.png",
-    model: "porsche 718 cayman",
+    model: "Porsche 718 cayman",
     price: "$48,500",
     description:
       "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
   },
   {
     img: "assets/images/featured-cars/fc7.png",
-    model: "bmw 8-series coupe",
+    model: "BMW 8-series coupe",
     price: "$56,000",
     description:
       "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
@@ -71,9 +71,6 @@ const FeaturedCars: FC = () => (
   <section className="featured-cars-section" id="featured-cars">
     <div className="featured-cars-container">
       <div className="featured-cars-header">
-        <p>
-          Checkout <span>the</span> featured cars
-        </p>
         <h2>Featured Cars</h2>
       </div>
       <div className="featured-cars-grid">

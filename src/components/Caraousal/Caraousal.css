@@ -1,6 +1,5 @@
 .caraousal-section {
   padding: 20px;
-  background-color: #f9f9f9;
 }
 
 .caraousal-container {
@@ -25,11 +24,10 @@
 
 .caraousal-item {
   background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 300px;
-  padding: 15px;
+  padding: 40px 24px;
   text-align: center;
 }
 
@@ -53,7 +51,7 @@
 }
 
 .caraousal-button {
-  background-color: #007bff;
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -64,5 +62,5 @@
 }
 
 .caraousal-button:hover {
-  background-color: #0056b3;
+  background-color: var(--accent-color);
 }
