@@ -1,1 +1,1 @@
-# learn-react-redux
+## Learning TypeScript, ReactJS, React Router, React Redux
