@@ -10,7 +10,6 @@
 }
 
 body {
-  background-color: var(--background-color);
   overflow-x: hidden;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -31,7 +30,8 @@ body {
     --input: 214.3 31.8% 91.4%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 160.12, 84.08%, 39.41%;
+    /* --primary: 222.2 47.4% 11.2%; */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
