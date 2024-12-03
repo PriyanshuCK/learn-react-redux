@@ -12,13 +12,13 @@ const Header: FC = () => (
           <a href="#car-header">Home</a>
         </li>
         <li>
-          <a href="#new-cars">New Cars</a>
+          <a href="#new-cars">New</a>
         </li>
         <li>
           <a href="#features">Features</a>
         </li>
         <li>
-          <a href="#featured-cars">Featured cars</a>
+          <a href="#featured-cars">Featured</a>
         </li>
         <li>
           <a href="#testimonials">Testimonials</a>
