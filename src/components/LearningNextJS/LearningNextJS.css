@@ -4,6 +4,8 @@
   text-align: center;
   padding-bottom: 6px;
   margin-bottom: 32px;
+  font-size: xx-large;
+  font-weight: bolder;
 }
 
 #plan-container {
@@ -24,6 +26,8 @@
 .day-title {
   margin-bottom: 10px;
   margin-top: 20px;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 #financial-demo-img {

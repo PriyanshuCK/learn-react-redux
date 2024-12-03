@@ -31,12 +31,6 @@ const HomeLayout: FC<HomeLayoutProps> = () => (
       >
         NextJS
       </NavLink>
-      <NavLink
-        to={"/about"}
-        className={({ isActive }) => (isActive ? "active-link" : "")}
-      >
-        About Us
-      </NavLink>
     </nav>
     <Outlet />
   </>

@@ -2,7 +2,7 @@ import React from "react";
 import About from "./components/About/About";
 import CarHome from "./components/the-car-project/CarHome/CarHome";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import HomeLayout from "./components/the-car-project/HomeLayout/HomeLayout";
+import HomeLayout from "./components/HomeLayout/HomeLayout";
 import TaskSchedulerReact from "./components/task-scheduler-react/TaskSchedulerReact/TaskSchedulerReact";
 import LearningNextJS from "./components/LearningNextJS/LearningNextJS";
 

@@ -33,7 +33,7 @@ const LearningNextJS: FC<LearningNextJSProps> = () => (
 
       <div className="day-section" id="day-1">
         <h2 className="day-title">Day 1</h2>
-        <p className="steps-title">Steps covered & concepts learned::</p>
+        <p className="steps-title">Steps covered & concepts learned:</p>
         <ul className="steps-list">
           <li>Getting Started</li>
           <li>CSS Styling</li>
@@ -44,7 +44,7 @@ const LearningNextJS: FC<LearningNextJSProps> = () => (
 
       <div className="day-section" id="day-2">
         <h2 className="day-title">Day 2</h2>
-        <p className="steps-title">Steps covered & concepts learned::</p>
+        <p className="steps-title">Steps covered & concepts learned:</p>
         <ul className="steps-list">
           <li>Navigating Between Pages</li>
           <li>Setting Up Your Database</li>
@@ -54,7 +54,7 @@ const LearningNextJS: FC<LearningNextJSProps> = () => (
 
       <div className="day-section" id="day-3">
         <h2 className="day-title">Day 3</h2>
-        <p className="steps-title">Steps covered & concepts learned::</p>
+        <p className="steps-title">Steps covered & concepts learned:</p>
         <ul className="steps-list">
           <li>Static & Dynamic Rendering</li>
           <li>Streaming</li>
