@@ -95,7 +95,7 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
               combinedStartDateTime && combinedEndDateTime
                 ? "visible"
                 : "invisible"
-            }`}
+            } mt-3`}
           >
             <Button>Set Deadline</Button>
           </Link>

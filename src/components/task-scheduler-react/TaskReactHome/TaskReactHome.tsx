@@ -14,12 +14,15 @@ const TaskReactHome: FC<TaskReactHomeProps> = () => {
     <>
       <div className="flex justify-center items-center h-dvh w-full -mt-[69px] gap-8 flex-col">
         <Input
-          className="w-96 rounded-none focus-visible:ring-0 shadow-none border-t-0 border-r-0 border-l-0 md:text-lg border-b-2 border-emerald-500 focus-visible:border-b text-center"
+          className="w-96 rounded-none focus-visible:ring-0 shadow-none border-t-0 border-r-0 border-l-0 md:text-lg border-b-2 border-slate-500 focus-visible:border-b text-center"
           placeholder="What do you want to accomplish?"
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-        <Link to={"set-deadline"} className={`${task ? "block" : "hidden"}`}>
+        <Link
+          to={"set-deadline"}
+          className={`${task ? "visible" : "invisible"}`}
+        >
           <Button className="">
             Set Deadline
             <MoveRight />
