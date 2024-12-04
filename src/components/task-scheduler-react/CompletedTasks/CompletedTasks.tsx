@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import "./CompletedTasks.css";
-import { TasksTable } from "../components/tasks-table";
+import { TasksTable } from "../components/TasksTable";
 
 interface CompletedTasksProps {}
 
