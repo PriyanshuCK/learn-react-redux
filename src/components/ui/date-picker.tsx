@@ -16,6 +16,9 @@ interface DatePickerProps {
 }
 
 export function DatePicker({ date, setDate, className }: DatePickerProps) {
+  const disablePastDates = (date: Date) => {
+    return date < new Date(new Date().setHours(0, 0, 0, 0));
+  };
   return (
     <div className={className}>
       <Popover>
@@ -36,6 +39,7 @@ export function DatePicker({ date, setDate, className }: DatePickerProps) {
             mode="single"
             selected={date}
             onSelect={setDate}
+            disabled={disablePastDates}
             initialFocus
           />
         </PopoverContent>

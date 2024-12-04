@@ -6,6 +6,7 @@ import HomeLayout from "./components/HomeLayout/HomeLayout";
 import TaskSchedulerReact from "./components/task-scheduler-react/TaskSchedulerReact/TaskSchedulerReact";
 import LearningNextJS from "./components/LearningNextJS/LearningNextJS";
 import SetDeadline from "./components/task-scheduler-react/SetDeadline/SetDeadline";
+import TaskReactHome from "./components/task-scheduler-react/TaskReactHome/TaskReactHome";
 
 function App() {
   return (
@@ -17,8 +18,16 @@ function App() {
             <Route
               path="/task-scheduler-react"
               element={<TaskSchedulerReact />}
-            ></Route>
-            <Route path="set-deadline" element={<SetDeadline />} />
+            >
+              <Route
+                path="/task-scheduler-react/"
+                element={<TaskReactHome />}
+              />
+              <Route
+                path="/task-scheduler-react/set-deadline"
+                element={<SetDeadline />}
+              />
+            </Route>
             <Route path="/learning-nextjs" element={<LearningNextJS />} />
             <Route path="/about" element={<About />} />
           </Route>

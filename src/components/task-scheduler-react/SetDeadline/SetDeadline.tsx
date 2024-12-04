@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./SetDeadline.css";
 import { format } from "date-fns";
 import { TimePicker } from "../../ui/time-picker";
@@ -35,39 +35,72 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
       )
     : null;
 
+  useEffect(() => {
+    setStartTime({ hours: 23, minutes: 55 });
+  }, [startDate]);
+
+  useEffect(() => {
+    setEndTime({ hours: 23, minutes: 55 });
+  }, [endDate]);
+
   return (
     <>
-      <div>
-        <h2>Select start time and date:</h2>
-        <div>
-          <DatePicker date={startDate} setDate={setStartDate} />
+      <div className="-mt-[69px] flex flex-col justify-center h-svh items-center gap-6">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
+          <div className="flex flex-col gap-2 items-center">
+            <h2>Select start date and time:</h2>
+            <div>
+              <DatePicker date={startDate} setDate={setStartDate} />
+            </div>
+            <div className={`${startDate ? "" : "invisible"}`}>
+              <TimePicker
+                date={startDate}
+                time={startTime}
+                setTime={setStartTime}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 items-center">
+            <h2>Select end date and time:</h2>
+            <div>
+              <DatePicker date={endDate} setDate={setEndDate} />
+            </div>
+            <div className={`${endDate ? "" : "invisible"}`}>
+              <TimePicker date={endDate} time={endTime} setTime={setEndTime} />
+            </div>
+          </div>
         </div>
-        <div>
-          <TimePicker time={startTime} setTime={setStartTime} />
+        <div className="flex flex-col items-center gap-2">
+          <p
+            className={`text-sm ${
+              combinedStartDateTime ? "visible" : "invisible"
+            }`}
+          >
+            {combinedStartDateTime
+              ? `Start: ${format(combinedStartDateTime, "PPpp")}`
+              : "Pick start date to set deadline"}
+          </p>
+          <p
+            className={`text-sm ${
+              combinedEndDateTime ? "visible" : "invisible"
+            }`}
+          >
+            {combinedEndDateTime
+              ? `End: ${format(combinedEndDateTime, "PPpp")}`
+              : "Pick end date to set deadline"}
+          </p>
+          <Link
+            to={"/task-scheduler-react"}
+            className={`${
+              combinedStartDateTime && combinedEndDateTime
+                ? "visible"
+                : "invisible"
+            }`}
+          >
+            <Button>Set Deadline</Button>
+          </Link>
         </div>
-        <p className="text-sm">
-          {combinedStartDateTime
-            ? `Selected date and time: ${format(combinedStartDateTime, "PPpp")}`
-            : "No date and time selected"}
-        </p>
       </div>
-      <div>
-        <h2>Select end time and date:</h2>
-        <div>
-          <DatePicker date={endDate} setDate={setEndDate} />
-        </div>
-        <div>
-          <TimePicker time={endTime} setTime={setEndTime} />
-        </div>
-        <p className="text-sm">
-          {combinedEndDateTime
-            ? `Selected date and time: ${format(combinedEndDateTime, "PPpp")}`
-            : "No date and time selected"}
-        </p>
-      </div>
-      <Link to={"/task-scheduler-react"}>
-        <Button>Set Deadline</Button>
-      </Link>
     </>
   );
 };

@@ -19,8 +19,8 @@ const TaskReactHome: FC<TaskReactHomeProps> = () => {
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-        <Link to={"/set-deadline"} className={`${task ? "block" : "hidden"}`}>
-          <Button className="bg-emerald-500 hover:bg-emerald-600 font-semibold">
+        <Link to={"set-deadline"} className={`${task ? "block" : "hidden"}`}>
+          <Button className="">
             Set Deadline
             <MoveRight />
           </Button>
