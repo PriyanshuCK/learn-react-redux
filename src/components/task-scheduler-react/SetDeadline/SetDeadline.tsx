@@ -1,6 +1,14 @@
 import React, { FC, useCallback } from "react";
 import "./SetDeadline.css";
-import { format, isToday, isBefore, isEqual, set, addMinutes } from "date-fns";
+import {
+  format,
+  isToday,
+  isBefore,
+  isEqual,
+  set,
+  addMinutes,
+  subMinutes,
+} from "date-fns";
 import { TimePicker } from "../../ui/time-picker";
 import { DatePicker } from "../../ui/date-picker";
 import { Button } from "components/ui/button";
@@ -8,8 +16,6 @@ import { Link } from "react-router-dom";
 import { useTask, useTaskDispatch } from "../components/TaskContext";
 
 interface SetDeadlineProps {}
-
-// Next feature/bug to work on: Setting end time <= start time => (update start time > current time and end time > start time)
 
 const SetDeadline: FC<SetDeadlineProps> = () => {
   const task = useTask();
@@ -22,13 +28,14 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
         let newDate = new Date(date);
 
         if (isToday(newDate)) {
-          // Set to current time if it's today
           newDate = set(newDate, {
             hours: now.getHours(),
-            minutes: now.getMinutes() - (now.getMinutes() % 5) + 5,
+            minutes:
+              now.getMinutes() -
+              (now.getMinutes() % 5) +
+              (isStartDate ? 5 : 10),
           });
         } else {
-          // Preserve existing time or set to 00:00 if no existing time
           const existingTime = isStartDate
             ? task.startDateTime
             : task.endDateTime;
@@ -42,22 +49,11 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
           }
         }
 
-        // Ensure end date/time is after start date/time
-        if (!isStartDate && task.startDateTime) {
-          if (
-            isBefore(newDate, task.startDateTime) ||
-            isEqual(newDate, task.startDateTime)
-          ) {
-            newDate = addMinutes(task.startDateTime, 5);
-          }
-        }
-
         dispatch({
           type: isStartDate ? "set_startDate" : "set_endDate",
           [isStartDate ? "startDateTime" : "endDateTime"]: newDate,
         });
 
-        // If setting start date and it's after or equal to end date, update end date
         if (
           isStartDate &&
           task.endDateTime &&
@@ -68,6 +64,19 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
           dispatch({
             type: "set_endDate",
             endDateTime: newEndDate,
+          });
+        }
+
+        if (
+          !isStartDate &&
+          task.startDateTime &&
+          (isEqual(newDate, task.startDateTime) ||
+            isBefore(newDate, task.startDateTime))
+        ) {
+          const newStartDate = subMinutes(newDate, 5);
+          dispatch({
+            type: "set_startDate",
+            startDateTime: newStartDate,
           });
         }
       } else {
@@ -100,18 +109,7 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
         const now = new Date();
 
         if (isToday(newDateTime) && isBefore(newDateTime, now)) {
-          // If the new time is in the past, set it to the current time
           newDateTime = set(now, { seconds: 0, milliseconds: 0 });
-        }
-
-        // Ensure end time is after start time
-        if (!isStartTime && task.startDateTime) {
-          if (
-            isBefore(newDateTime, task.startDateTime) ||
-            isEqual(newDateTime, task.startDateTime)
-          ) {
-            newDateTime = addMinutes(task.startDateTime, 5);
-          }
         }
 
         dispatch({
@@ -119,7 +117,6 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
           [isStartTime ? "startDateTime" : "endDateTime"]: newDateTime,
         });
 
-        // If setting start time and it's after or equal to end time, update end time
         if (
           isStartTime &&
           task.endDateTime &&
@@ -130,6 +127,19 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
           dispatch({
             type: "set_endDate",
             endDateTime: newEndDateTime,
+          });
+        }
+
+        if (
+          !isStartTime &&
+          task.startDateTime &&
+          (isEqual(newDateTime, task.startDateTime) ||
+            isBefore(newDateTime, task.startDateTime))
+        ) {
+          const newStartDateTime = subMinutes(newDateTime, 5);
+          dispatch({
+            type: "set_startDate",
+            startDateTime: newStartDateTime,
           });
         }
       }
