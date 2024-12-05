@@ -112,11 +112,6 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
           newDateTime = set(now, { seconds: 0, milliseconds: 0 });
         }
 
-        dispatch({
-          type: isStartTime ? "set_startDate" : "set_endDate",
-          [isStartTime ? "startDateTime" : "endDateTime"]: newDateTime,
-        });
-
         if (
           isStartTime &&
           task.endDateTime &&
@@ -136,12 +131,46 @@ const SetDeadline: FC<SetDeadlineProps> = () => {
           (isEqual(newDateTime, task.startDateTime) ||
             isBefore(newDateTime, task.startDateTime))
         ) {
-          const newStartDateTime = subMinutes(newDateTime, 5);
+          let newStartDateTime = now;
+
+          if (
+            isEqual(
+              newDateTime,
+              set(now, {
+                minutes: now.getMinutes() - (now.getMinutes() % 5) + 5,
+                seconds: 0,
+                milliseconds: 0,
+              })
+            ) ||
+            isBefore(
+              newDateTime,
+              set(now, {
+                minutes: now.getMinutes() - (now.getMinutes() % 5) + 5,
+                seconds: 0,
+                milliseconds: 0,
+              })
+            )
+          ) {
+            newStartDateTime = set(now, {
+              minutes: now.getMinutes() - (now.getMinutes() % 5) + 5,
+              seconds: 0,
+              milliseconds: 0,
+            });
+            newDateTime = addMinutes(newStartDateTime, 5);
+          } else {
+            newStartDateTime = subMinutes(newDateTime, 5);
+          }
+
           dispatch({
             type: "set_startDate",
             startDateTime: newStartDateTime,
           });
         }
+
+        dispatch({
+          type: isStartTime ? "set_startDate" : "set_endDate",
+          [isStartTime ? "startDateTime" : "endDateTime"]: newDateTime,
+        });
       }
     },
     [dispatch, task.startDateTime, task.endDateTime]
